@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
 import Landing from '../pages/Landing';
 import Login from '../pages/Login';
@@ -12,8 +13,8 @@ const Routes: React.FC = () => (
     <Route path="/" exact component={Landing} />
     <Route path="/login" component={Login} />
     <Route path="/app" component={Dashboard} />
-    <Route path="/orphanages/create" component={CreateOrphanage} />
     <Route path="/orphanages/:id" component={Orphanage} />
+    <Route path="/orphanages/create" component={CreateOrphanage} isPrivate />
   </Switch>
 );
 

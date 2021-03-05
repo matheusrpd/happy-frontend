@@ -40,7 +40,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   position: relative;
   background: #fff;
   height: 100%;
