@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiPlus, FiArrowRight } from 'react-icons/fi';
 import { Marker, Popup } from 'react-leaflet';
 import api from '../../services/api';
+import PermissionComponent from "../../components/PermissionComponent";
 
 import mapIcon from '../../utils/MapIconApp';
 import mapMarkerImg from '../../assets/map-marker.svg';
@@ -59,10 +60,12 @@ export default function OrphanagesMap() {
         </Marker>
         ))}
       </Map>
-
-        <Button to="/orphanages/create">
-          <FiPlus size={32} color="#fff" />
-        </Button>
+        
+        <PermissionComponent role="ROLE_ADMIN,ROLE_EMPLOYEE">
+          <Button to="/orphanages/create">
+            <FiPlus size={32} color="#fff" />
+          </Button>
+        </PermissionComponent>
     </Container>
   );
 }
