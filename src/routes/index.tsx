@@ -1,6 +1,6 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
-import Route from './Route';
+import { Switch, Route } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 import Landing from '../pages/Landing';
 import Login from '../pages/Login';
@@ -13,8 +13,8 @@ const Routes: React.FC = () => (
     <Route path="/" exact component={Landing} />
     <Route path="/login" component={Login} />
     <Route path="/app" component={Dashboard} />
+    <PrivateRoute path="/orphanages/create" component={CreateOrphanage} role="ROLE_ADMIN,ROLE_EMPLOYEE" />
     <Route path="/orphanages/:id" component={Orphanage} />
-    <Route path="/orphanages/create" component={CreateOrphanage} isPrivate />
   </Switch>
 );
 

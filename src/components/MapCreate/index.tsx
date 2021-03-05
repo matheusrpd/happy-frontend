@@ -26,7 +26,7 @@ interface MarkerProps {
 const Marker: React.FC<MarkerProps> = ({ handleSetPosition }: MarkerProps): JSX.Element => {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
-  const map = useMapEvent('click', (event: LeafletMouseEvent) => {
+  useMapEvent('click', (event: LeafletMouseEvent) => {
     const { lat, lng } = event.latlng;
 
     handleSetPosition!({

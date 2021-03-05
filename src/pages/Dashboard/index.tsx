@@ -4,8 +4,6 @@ import { FiPlus, FiArrowRight } from 'react-icons/fi';
 import { Marker, Popup } from 'react-leaflet';
 import api from '../../services/api';
 
-import { useAuth } from '../../hooks/auth';
-
 import mapIcon from '../../utils/MapIconApp';
 import mapMarkerImg from '../../assets/map-marker.svg';
 import Map from '../../components/Map';
@@ -21,7 +19,6 @@ export interface IOrphanage {
 
 export default function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<IOrphanage[]>([]);
-  const { signInOut } = useAuth();
 
   useEffect(() => {
     const loadOrphanages = async () => {
