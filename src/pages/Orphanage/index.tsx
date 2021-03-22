@@ -129,12 +129,16 @@ export default function Orphanage() {
               )}
             </Cards>
 
-            <Link to={`https://api.whatsapp.com/send?phone=55${orphanage.whatsapp}`}>
-                <PrimaryButton type="button" >
-                  <FaWhatsapp size={20} color="#FFF" />
-                  Entrar em contato
-                </PrimaryButton>
-            </Link>
+            <a 
+              href={`https://api.whatsapp.com/send?phone=55${orphanage.whatsapp}`} 
+              target="_blank"
+              rel="noreferrer"
+            >
+              <PrimaryButton type="button" >
+                <FaWhatsapp size={20} color="#FFF" />
+                Entrar em contato
+              </PrimaryButton>
+            </a>
           </Content>
         </Details>
       </main>
